@@ -1,0 +1,57 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  
+}
+
+.card-quote{
+  display:flex;
+  margin: auto;
+  padding: 1.5rem;
+  flex-direction: column;
+  width: max-content;
+  max-width: 50%;
+  border-radius: 1.5em;
+}
+.card-quote > p{
+  display: inline-block;
+  filter: contrast(300%);
+}
+
+.quote-marks{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.quote-text{
+  font-size: 2rem;
+}
+
+.quote-author{
+  align-self: end;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+
+
+.btnChange{
+  display: flex;
+  width: max-content;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  border: none;
+  box-shadow: 3px 3px 7px #000; 
+}
+
+.btnChange:active{
+  transform: scale(1.1);
+}
