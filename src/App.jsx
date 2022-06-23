@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { DDBB } from './database/database'
-import Quote from './components/Quote'
+import QuoteBox from './components/QuoteBox'
 
 
 function App() {
@@ -9,10 +9,10 @@ function App() {
   const [isRefresh, setIsRefresh] = useState(false)
 
   const randomNumber = (minimo, maximo) => {
-    let randomNum = Math.random() * ((maximo - minimo)+1)
-    randomNum = Math.floor(randomNum)
+    let auxNumberRandom = Math.random() * ((maximo - minimo)+1)
+    auxNumberRandom = Math.floor(auxNumberRandom)
     
-    return (minimo + randomNum)
+    return (minimo + auxNumberRandom)
   }
 
   const randomColor = () =>{
@@ -25,7 +25,7 @@ function App() {
     return quoteColor
   }
 
-  const quotePosition = DDBB[randomNumber(0 , 101)]
+  const quoteElement = DDBB[randomNumber(0 , 101)]
 
   const quoteColor = randomColor()
 
@@ -33,9 +33,10 @@ function App() {
 
   return (
     <div className="App" style={{backgroundColor:`${quoteSecondColor}`}}>
-      <Quote quote={quotePosition.quote} 
-              author={quotePosition.author} 
-              isRefresh={isRefresh} setIsRefresh={setIsRefresh} 
+      <QuoteBox quote={quoteElement.quote} 
+              author={quoteElement.author} 
+              isRefresh={isRefresh} 
+              setIsRefresh={setIsRefresh} 
               color={quoteColor} 
               secondColor={quoteSecondColor}
       />

@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faRotate} from '@fortawesome/free-solid-svg-icons'
+import RefreshButtom from './RefreshButtom'
 
-const Quote = ({quote, author, isRefresh, setIsRefresh, color, secondColor}) => {
-    const refresh = <FontAwesomeIcon icon={faRotate} />
+const QuoteBox = ({quote, author, isRefresh, setIsRefresh, color, secondColor}) => {
+    
     return (
         <>
             <div className="card-quote" style={{backgroundColor:`${color}`}}>
@@ -14,15 +13,15 @@ const Quote = ({quote, author, isRefresh, setIsRefresh, color, secondColor}) => 
                 <p className="quote-author" style={{color:`${secondColor}`}}>
                     ( {author} )
                 </p>
-                <button className='btnChange' 
-                        onClick={()=>setIsRefresh(!isRefresh)} 
-                        style={{color:`${color}`, backgroundColor:`${secondColor}`}}
+                <RefreshButtom isRefresh={isRefresh} 
+                        setIsRefresh={setIsRefresh} 
+                        color={color} 
+                        secondColor={secondColor}
                 >
-                    {refresh}
-                </button>
+                </RefreshButtom>
             </div>
         </>
     )
 }
 
-export default Quote;
+export default QuoteBox;
